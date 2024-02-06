@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background-color: #4D6C73;
+}
+
+header {
+    text-align: center;
+
+}
+
+img {
+    border-radius: 10%;
+}
+
+.classes-character {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.names {
+    margin-right: 10px;
+   
+}
+.search {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+label {
+    height: 30px;
+    margin: 12px;
+}
+
+#classes-input {
+    background-color: #243A48;
+    border: none;
+    outline: none;
+    height: 30px;
+    margin: 8px;
+}
+
+#classes-name-button {
+    background-color: #4D6C73;
+    display: inline-flex; 
+    align-items : center; 
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 40px;
+   margin-top: 3px;
+}
+
+.spell-book:hover {
+  box-shadow: 2px 2px 5px 4px #243A48;
+}
+
+.spells {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+.description {
+    color: #D9A441;
+    margin: 60px;
+    padding: 24px;
+    background-color: #21402E;
+    border-radius: 10px;
+}
+
+
+h2 {
+    text-align: center;
+    padding-top: 20px;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+   .classes-character {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 0.9rem;
+   }
+
+   label {
+    font-size: 0.9rem;
+   }
+
+   #classes-input {
+    margin-top: 30px;
+   }
+
+   #classes-name-button {
+    margin-top: 25px;
+   }
+
+   .description {
+    margin: 20px;
+    padding: 10px;
+    width: auto;
+   }
+}
