@@ -40,7 +40,8 @@ label {
 }
 
 #classes-input {
-    background-color: #243A48;
+    background-color: #21402E;
+    color: #D9A441;
     border: none;
     outline: none;
     height: 30px;
@@ -56,7 +57,7 @@ label {
     cursor: pointer;
     width: 30px;
     height: 40px;
-   margin-top: 3px;
+    margin-top: 3px;
 }
 
 .spell-book:hover {
@@ -82,6 +83,10 @@ h2 {
     text-align: center;
     padding-top: 20px;
     text-decoration: underline;
+}
+
+.multiClassing {
+    text-align: center;
 }
 
 @media (max-width: 600px) {

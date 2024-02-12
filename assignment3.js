@@ -1,4 +1,8 @@
 $(() => {
+
+    
+ 
+    
  
     const DND_URL = "https://www.dnd5eapi.co/api/";
     let characterArray = [];
@@ -35,10 +39,11 @@ $(() => {
             })
         })
     } 
-   getChars();
+  getChars();
   
     const getCharSpells = (userInput) => {
         $('.spells').empty();
+        $('.get-proficient').empty();
         if(characterArray.includes(userInput)) {
             getDND(DND_URL + "classes/" + userInput + "/spellcasting").then(spells => {
                 spells.info.forEach(item => {
@@ -56,10 +61,37 @@ $(() => {
         }   
     };
 
+    const getProficient = (userInput) => {
+        $('.spells').empty();
+        $('.get-proficient').empty();
+        if(characterArray.includes(userInput)) {
+            getDND(DND_URL + "classes/" + userInput + "/multi-classing").then(proficient => {
+                $('.get-proficient').append(`<h3 class="multiClassing">This class does not have spell casting, but have proficiencies in:</h3>`)
+                proficient.proficiencies.forEach(item => {
+                    $('.get-proficient').append(`
+                    <div class="description"
+                    <h3></h3>
+                    <p>${item.name}</p>
+                    </div>
+                    `)
+                })
+            })
+            
+        }else { 
+            $('.spells').append("<p>You have to write a class name!</p>")
+            return;  
+        }  
+    }
+
+
     $('#classes-name-button').on('click', () => {
         const userInput = $('#classes-input').val().toLowerCase();
-        getCharSpells(userInput)
-       
+        let charProficient = ["barbarian", "fighter", "monk", "rogue"]
+        if(charProficient.includes(userInput)) {
+            getProficient(userInput)
+        }else{
+            getCharSpells(userInput)
+        }
     })
     
 })
